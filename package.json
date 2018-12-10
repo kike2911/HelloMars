@@ -1,0 +1,22 @@
+{
+  "name": "robot-blog",
+  "version": "1.0.0",
+  "description": "this is an initial web proyect",
+  "main": "javascript.js",
+  "scripts": {
+    "compile:sass": "node-sass sass/main.scss style.css -w"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kike2911/HelloMars.git"
+  },
+  "author": "Enrique Cena",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kike2911/HelloMars/issues"
+  },
+  "homepage": "https://github.com/kike2911/HelloMars#readme",
+  "devDependencies": {
+    "node-sass": "^4.11.0"
+  }
+}
