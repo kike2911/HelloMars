@@ -4,7 +4,7 @@
   "description": "this is an initial web proyect",
   "main": "javascript.js",
   "scripts": {
-    "compile:sass": "node-sass sass/main.scss style.css -w"
+    "compile:sass": "node-sass sass/main.scss ../style.css -w"
   },
   "repository": {
     "type": "git",
