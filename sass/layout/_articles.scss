@@ -1,0 +1,38 @@
+.page {
+    margin: 36px auto;
+    width: 96rem;
+    }
+     
+    .blog {
+    margin: 0 auto 5.3rem;
+    width: 900px;
+    }
+     
+    .blog .main {
+    float: left;
+    width: 56.6rem;
+    }
+     
+    .blog .other {
+    float: right;
+    width: 33.1rem;
+    }
+
+.article-recent{
+    background-image:
+    -webkit-gradient(linear, 0% 0%, 0% 100%, from(#660303), to(#8C1622), color-stop(.6,#330E0E));
+    position: relative;
+    padding: 5px;
+}
+
+.tagged{
+    display: !important inline-block;
+    float: right;
+    ul .tagged-list{
+    }
+}
+
+.article{
+    padding: 1rem 1rem 1rem 1rem;
+    position: relative;
+}

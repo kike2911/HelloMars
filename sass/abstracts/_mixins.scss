@@ -1,0 +1,20 @@
+@mixin clearfix {
+    &::after{
+        content: "";
+        clear: both;
+            display: table;
+        }
+}
+
+@mixin style-link-text($col){
+    text-decoration: none;
+  text-transform: uppercase;
+  color: $col;
+}
+
+@mixin style-title-text{
+    margin-left: 3em;
+    margin-right: 4em;
+    font-family: sans-serif;
+    font-size: 2em;
+}

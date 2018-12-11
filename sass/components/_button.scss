@@ -1,0 +1,27 @@
+.buttons{
+    float: right;
+}
+
+  %btn-placeholder{
+               padding:10px;
+             display: inline-block;
+             text-align: center;
+             border-radius: 100px;
+             width: $width-button;
+             margin-left: 10px;
+             font-family: sans-serif;
+              @include style-link-text($color-white);
+  }
+           
+  
+           .regist{
+             &:link{
+               @extend %btn-placeholder;
+               background-color: $color-white;
+             }
+             
+             &:hover{
+               color: $color-tertiary;
+               background-color: darken($color-white, 15%);
+             }
+           }

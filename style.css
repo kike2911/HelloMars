@@ -121,11 +121,8 @@ nav {
   text-align: center; }
 
 .tagged {
-  display: inline-block; }
-  .tagged ul .tagged-list li {
-    display: inline-block;
-    float: left;
-    position: absolute; }
+  display: !important inline-block;
+  float: right; }
 
 .photo {
   width: 10em;
