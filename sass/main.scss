@@ -6,25 +6,132 @@
     box-sizing: inherit;
 }
 
-$white-color: #fff;
+$color-white: #fff;
+$color-primary-light: #e79696;
+$color-primary: #dd7976a4;
+$color-secondary: rgb(185, 55, 55);
+$color-tertiary: #660303;
+$color-back: rgba(255, 255, 255, 0.685);
+$color-dark: rgba(58, 58, 58, 0);
+
+$width-button: 150px;
+
+@mixin clearfix {
+    &::after{
+        content: "";
+        clear: both;
+            display: table;
+        }
+}
+
+@mixin style-link-text($col){
+    text-decoration: none;
+  text-transform: uppercase;
+  color: $col;
+}
+
+@mixin style-title-text{
+    margin-left: 3em;
+    margin-right: 4em;
+    font-family: sans-serif;
+    font-size: 2em;
+}
+
 
 html{
     font-size: 62.5%;
 }
 
-
 body {
     height: 95vh;
     background-image: 
-    linear-gradient(to right bottom, #e79696, #dd7976a4),url(img/bg-electronic.jpeg);
-      background-size: cover;
+    linear-gradient(to right bottom, $color-primary-light, $color-primary),url(img/bg-electronic.jpeg);  background-size: cover;
       background-position: top;
       background-repeat: no-repeat;
+
+      p{
+        margin-left: 4em;
+        margin-right: 4em;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 1.4em;
+        }
     }
 
     .blog-section{
-        background-color: rgba(255, 255, 255, 0.685);
+        background-color: $color-back;
     }
+
+    nav{
+        margin-bottom: 30px;
+        padding: 10px;
+        @include clearfix;
+        background-color: $color-tertiary;
+        /*
+        background-image:
+        -webkit-gradient(linear, 0% 0%, 0% 100%, from(#660303), to(#8C1622), color-stop(.6,#330E0E));*/
+        position: relative;
+      }
+
+      .navigation{
+        list-style: none;
+        float: left;
+        @include style-link-text($color-white);
+        
+        li{
+          display: inline-block;
+          margin-left: 30px;
+          
+          &:first-child{
+          margin: 0;
+          }
+          
+          a{
+                font-family: sans-serif;
+            @include style-link-text($color-white);
+            font-size: 20px;
+          }
+
+
+          
+        }
+      }
+
+      .buttons{
+        float: right;
+    }
+
+      %btn-placeholder{
+                   padding:10px;
+                 display: inline-block;
+                 text-align: center;
+                 border-radius: 100px;
+                 width: $width-button;
+                 margin-left: 10px;
+                 font-family: sans-serif;
+                  @include style-link-text($color-white);
+      }
+               
+      
+               .regist{
+                 &:link{
+                   @extend %btn-placeholder;
+                   background-color: $color-white;
+                 }
+                 
+                 &:hover{
+                   color: $color-tertiary;
+                   background-color: darken($color-white, 15%);
+                 }
+               }
+               
+
+
+
+
+
+
+
+
 
 .page {
     margin: 36px auto;
@@ -46,24 +153,35 @@ body {
     width: 33.1rem;
     }
 
-.article-title{
+.article-recent{
     background-image:
     -webkit-gradient(linear, 0% 0%, 0% 100%, from(#660303), to(#8C1622), color-stop(.6,#330E0E));
     position: relative;
+    padding: 5px;
+
+    .lede{ 
+        text-decoration: none;
+        color: $color-white;
+        font-family: sans-serif;
+
+
+    a{ 
+        text-decoration: none;
+        color: white;
+        font-family: sans-serif;
+        text-align: center
+    }
+    }
+}
+    .main{
+    .article-title{
+        @include style-title-text;
+    }
+
 }
 
-.article-title .lede a{ 
-    text-decoration: none;
-    color: white;
-    font-family: sans-serif;
-    text-align: center
-}
 
-.article-title .lede{ 
-    text-decoration: none;
-    color: $white-color;
-    font-family: sans-serif;
-}
+
 
 .robot-img{
     display: block;
@@ -77,19 +195,18 @@ body {
 .tagged{
     display: inline-block;
 
-}
-
-.tagged ul .tagged-list li{
-    display: inline-block;
-    float: left;
-    position: absolute;
+    ul .tagged-list li{
+        display: inline-block;
+        float: left;
+        position: absolute;
+    }
 }
 
 .photo{
     width: 10em;
     margin-left: 1em;
     margin-right: 1em;
-    background-color: $white-color;
+    background-color: $color-white;
     display: inline;
     border-color: rgba(100, 66, 66, 0.685) ;
     position: relative;
@@ -108,16 +225,13 @@ body {
 .article{
     padding: 1rem 1rem 1rem 1rem;
     position: relative;
+
+
 }
 .rb-h1{
-    margin-left: 2em;
-    margin-right: 2em;
-}
-
-.article-p{
-    margin-left: 4em;
-    margin-right: 4em;
-    font-family: Arial, Helvetica, sans-serif;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    @include style-title-text;
 }
 
 .rb-article{
